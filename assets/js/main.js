@@ -4,15 +4,17 @@
 
 // Il numero di chilometri da percorrere
 
-const kmDaPercorrere = Number (prompt(`Quanti chilometri devi fare?`));
-console.log(kmDaPercorrere);
-
 
 // Età del passeggero 
 
-const userAge = Number (prompt(`Scrivi la tua età`));
-console.log(userAge);
+const element = document.getElementById("km");
+element.addEventListener(`click`, function () {
+    
+    
+})
 
+
+// Il numero di chilometri da percorrere
 
 
 // il prezzo del biglietto è definito in base ai km (0.21 € al km)
@@ -20,25 +22,44 @@ console.log(userAge);
 const pricePerKm = 0.21
 console.log(pricePerKm);
 
-let discoutn, ticketPrice;
+const ticketPrice = kmDaPercorrere * pricePerKm;
+console.log(ticketPrice);
 
 // va applicato uno sconto del 20% per i minorenni
 
-if (userAge < 18){
-    // applica uno sconto del 20%
-    discoutn = 0.2
-} else if (userAge > 65) {
-    // applica uno sconto del 40%
-    discoutn = 0.4
-} else {
-    discoutn = 0
-    // non applicare uno sconto
-}
+const percentualeMinima = 20;
+console.log(percentualeMinima);
+
+const totaleMinimo = (prezzoInBaseAiKmPercorsi / 100) * percentualeMinima;
+console.log(totaleMinimo);
 
 
 // va applicato uno sconto del 40% per gli over 65.
 
+const percentualeMassima = 40;
+console.log(percentualeMassima);
+
+const totaleMassimo = (prezzoInBaseAiKmPercorsi / 100) * percentualeMassima;
+console.log(totaleMassimo);
+
+
+
 // Sulla base di queste informazioni dovrà calcolare il prezzo totale del biglietto di viaggio, secondo le seguenti regole:
+
+if (userAge < 18) {
+    console.log(totaleMinimo);
+    // applica uno sconto del 20%
+    
+} else if (userAge > 65) {
+    console.log(totaleMassimo);
+    // applica uno sconto del 40%
+    
+
+} else {
+    console.log(ticketPrice); 
+    // non applicare uno sconto
+}
+
 
 // MILESTONE 1:
 
