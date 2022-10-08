@@ -2,64 +2,56 @@
 
 // Scrivere un programma che chieda all’utente:
 
+
 // Il numero di chilometri da percorrere
+
+const kmDaPercorrere = document.getElementById(`km`).value;
 
 
 // Età del passeggero 
 
-const element = document.getElementById("km");
-element.addEventListener(`click`, function () {
-    
-    
-})
-
-
-// Il numero di chilometri da percorrere
+const userAge = document.getElementById(`userage`).value;
 
 
 // il prezzo del biglietto è definito in base ai km (0.21 € al km)
 
-const pricePerKm = 0.21
-console.log(pricePerKm);
+const priceForKm = 0.21
 
-const ticketPrice = kmDaPercorrere * pricePerKm;
-console.log(ticketPrice);
+
+const ticketPrice = kmDaPercorrere * priceForKm 
+
 
 // va applicato uno sconto del 20% per i minorenni
 
 const percentualeMinima = 20;
-console.log(percentualeMinima);
 
-const totaleMinimo = (prezzoInBaseAiKmPercorsi / 100) * percentualeMinima;
-console.log(totaleMinimo);
+const ticketPriceWithPercentualeMinima = (ticketPrice / 100) * percentualeMinima;
 
 
 // va applicato uno sconto del 40% per gli over 65.
 
-const percentualeMassima = 40;
-console.log(percentualeMassima);
+const percentualeMasima = 40;
 
-const totaleMassimo = (prezzoInBaseAiKmPercorsi / 100) * percentualeMassima;
-console.log(totaleMassimo);
 
+const ticketPriceWithPercentualeMassima = (ticketPrice / 100) * percentualeMasima;
 
 
 // Sulla base di queste informazioni dovrà calcolare il prezzo totale del biglietto di viaggio, secondo le seguenti regole:
 
-if (userAge < 18) {
-    console.log(totaleMinimo);
-    // applica uno sconto del 20%
-    
-} else if (userAge > 65) {
-    console.log(totaleMassimo);
-    // applica uno sconto del 40%
-    
-
-} else {
-    console.log(ticketPrice); 
-    // non applicare uno sconto
-}
-
+const element = document.querySelector(`button`);
+      element.addEventListener(`click`, function(){
+              // Al click deve generare 
+              if (userAge < 18) {
+                console.log(ticketPriceWithPercentualeMinima); 
+                // Applica il prezzo con lo sconto minore 
+          } else if (userAge > 65) {
+                console.log(ticketPriceWithPercentualeMassima); 
+                // Applica il prezzo con lo sconto massimo 
+          } else {
+                console.log(ticketPrice);
+                // Tariffa normale in base ai Km
+          }
+          })
 
 // MILESTONE 1:
 
