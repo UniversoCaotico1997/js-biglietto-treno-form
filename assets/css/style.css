@@ -1,0 +1,24 @@
+
+h1{
+    text-align: center;
+}
+.container{
+    background-color: red;
+    width: 60%;
+    margin: auto;
+    
+}
+.square{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+}
+.square_button{
+    display: flex;
+    justify-content: center;
+    margin-top:  2rem ;
+}
+.square_button .generate{
+    margin-right: 1rem;
+}

@@ -2,56 +2,98 @@
 
 // Scrivere un programma che chieda all’utente:
 
+// SELEZIONIAMO 
+      // Il nome 
+      // I km
+      // Età
 
-// Il numero di chilometri da percorrere
+const fullNameElement = document.getElementById(`name`);
 
-const kmDaPercorrere = document.getElementById(`km`).value;
+const kmDaPercorrereElement  = document.getElementById(`km`);
 
+const ageElement  = document.getElementById(`userage`);
 
-// Età del passeggero 
+// SELEZIONIAMO 
+      // Pulsanti
 
-const userAge = document.getElementById(`userage`).value;
+const genereteElement = document.querySelector(`.generate`);
 
+const cancelElement = document.querySelector(`.cancel`);
 
-// il prezzo del biglietto è definito in base ai km (0.21 € al km)
+// Recuperiamo i dati attarverso 
+      // Input
 
-const priceForKm = 0.21
+// const name = fullNameElement.value;
 
+// const km = kmDaPercorrereElement.value;
 
-const ticketPrice = kmDaPercorrere * priceForKm 
-
-
-// va applicato uno sconto del 20% per i minorenni
-
-const percentualeMinima = 20;
-
-const ticketPriceWithPercentualeMinima = (ticketPrice / 100) * percentualeMinima;
-
-
-// va applicato uno sconto del 40% per gli over 65.
-
-const percentualeMasima = 40;
+// const age = ageElement.value;
 
 
-const ticketPriceWithPercentualeMassima = (ticketPrice / 100) * percentualeMasima;
+ // Creiamo il prezzo del biglietto 
+      // const / let
+
+// const euro = 0.21
+
+// const ticketPrice = km * euro
+
+
+// // va applicato uno sconto del 20% per i minorenni
+
+// const minimumDiscount = 0.20;
+
+// const maxTicket = (ticketPrice / 100) * minimumDiscount;
+
+
+// // va applicato uno sconto del 40% per gli over 65.
+
+// const maxDiscount = 0.40;
+
+
+// const minimumTicket = (ticketPrice / 100) * maxDiscount;
 
 
 // Sulla base di queste informazioni dovrà calcolare il prezzo totale del biglietto di viaggio, secondo le seguenti regole:
 
-const element = document.querySelector(`button`);
-      element.addEventListener(`click`, function(){
-              // Al click deve generare 
-              if (userAge < 18) {
-                console.log(ticketPriceWithPercentualeMinima); 
-                // Applica il prezzo con lo sconto minore 
-          } else if (userAge > 65) {
-                console.log(ticketPriceWithPercentualeMassima); 
-                // Applica il prezzo con lo sconto massimo 
-          } else {
-                console.log(ticketPrice);
-                // Tariffa normale in base ai Km
-          }
-          })
+
+genereteElement.addEventListener(`click`, function(){
+            // Al click deve generare 
+            const name = fullNameElement.value;
+            console.log(name);
+
+            const km = Number (kmDaPercorrereElement.value);
+            console.log(km);
+            
+            const age = ageElement.value;
+            console.log(age);
+
+            const euro = 0.21
+
+            const ticketPrice = km * euro
+
+            // va applicato uno sconto del 20% per i minorenni
+
+            const minimumDiscount = 0.20;
+
+            const maxTicket = (ticketPrice / 100) * minimumDiscount;
+
+            // va applicato uno sconto del 40% per gli over 65.
+
+            const maxDiscount = 0.40;
+
+            const minimumTicket = (ticketPrice / 100) * maxDiscount;
+
+            if (age < 18) {
+                  console.log(maxTicket); 
+                  // Applica il prezzo con lo sconto minore 
+            } else if (age > 65) {
+                  console.log(minimumTicket); 
+                  // Applica il prezzo con lo sconto massimo 
+            } else {
+                  console.log(ticketPrice);
+                  // Tariffa normale in base ai Km
+            }
+      })
 
 // MILESTONE 1:
 
@@ -66,3 +108,6 @@ const element = document.querySelector(`button`);
 // Il riepilogo dei dati e l'output del prezzo finale, andranno quindi stampati in pagina (il prezzo dovrà essere formattato con massimo due decimali, per indicare i centesimi sul prezzo).
 
 // Questo richiederà un minimo di ricerca.
+
+
+

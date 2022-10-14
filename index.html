@@ -8,36 +8,33 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-     
-    <header>
-        <!-- calcolo prezzo biglietto -->
-        <section>
-            <h1></h1>
-            <div class="container">
-                <div>
-                    <input type="text" placeholder="Nome Cognome" id="">
-                </div>
-                <div>
-                    <input type="text" placeholder="Km da percorrere" id="km">
-                </div>
-                <div>
-                    <input type="text" placeholder="Fascia d'età" id="userage">
-                </div>
-                <button>Genera</button>
-                
+    <h1>Biglietto del treno</h1>
+    <div class="container">
+        <div class="square">
+            <div>
+                <h4>Nome / Cognome</h4>
+                <input type="text" name="name" id="name" placeholder=""> 
             </div>
-            <!-- /.container -->
-        </section>
-        <!-- /.calcolo prezzo biglietto -->
-        <section>
-            <div class="container"></div>
-            <!-- /.container -->
-        </section>
-    </header>
-
-
-
-
+            <div>
+                <h4>Km da percorrere</h4>
+                <input type="text" name="km" id="km" placeholder="">
+            </div>
+            <div>
+                <h4>Quanti anni hai ?</h4>
+                <input type="text" id="userage" placeholder=""> 
+            </div>
+       
+        </div>
+        <div class="square_button">
+            <button class="generate">Genera</button>
+            <button class="cancel">Annulla</button>
+        </div>
+        
+        
+    </div>
+    <!-- /.container -->
+    
+     
 
 
 
