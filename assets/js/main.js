@@ -1,113 +1,82 @@
-// Descrizione:
+// creaimo un form nel quale l'utente inserira i propri dati 
+// {Nome, Cognome, età, Km, Anziano, bimbo e adulto}, 
+// i dati verrano inviati attraverso il click ul pulsante
+// Una volta compilato effettueremo uno sconto sul prezzo del biglietto
 
-// Scrivere un programma che chieda all’utente:
+// selezioniamo i vari elementi della dom 
 
-// SELEZIONIAMO 
-      // Il nome 
-      // I km
-      // Età
+const userNameElement = document.getElementById('username')
 
-const fullNameElement = document.getElementById(`name`);
+const surNameElement = document.getElementById('surname')
 
-const kmDaPercorrereElement  = document.getElementById(`km`);
+const userAgeElement = document.getElementById('age')
 
-const ageElement  = document.getElementById(`userage`);
-
-// SELEZIONIAMO 
-      // Pulsanti
-
-const genereteElement = document.querySelector(`.generate`);
-
-const cancelElement = document.querySelector(`.cancel`);
-
-// Recuperiamo i dati attarverso 
-      // Input
-
-// const name = fullNameElement.value;
-
-// const km = kmDaPercorrereElement.value;
-
-// const age = ageElement.value;
+const kmElement = document.getElementById('km')
 
 
- // Creiamo il prezzo del biglietto 
-      // const / let
+const buttonSubmitElement = document.querySelector('.submit')
+const buttonDeleteElement = document.querySelector('.delete')
 
-// const euro = 0.21
+buttonSubmitElement.addEventListener('click', function () {
 
-// const ticketPrice = km * euro
-
-
-// // va applicato uno sconto del 20% per i minorenni
-
-// const minimumDiscount = 0.20;
-
-// const maxTicket = (ticketPrice / 100) * minimumDiscount;
+      const userName = userNameElement.value
+      const sureName = surNameElement.value
+      const userAge = userAgeElement.value
+      const km = kmElement.value
+      const ticketPrice = km + 0.21.toFixed(2)
 
 
-// // va applicato uno sconto del 40% per gli over 65.
-
-// const maxDiscount = 0.40;
-
-
-// const minimumTicket = (ticketPrice / 100) * maxDiscount;
+      const discountOver = 40
+      const discoutnUnder = 20
 
 
-// Sulla base di queste informazioni dovrà calcolare il prezzo totale del biglietto di viaggio, secondo le seguenti regole:
+      let ticketPriceUnder = ticketPrice * discoutnUnder / 100
+      let ticketPriceOver = ticketPrice * discountOver / 100
 
 
-genereteElement.addEventListener(`click`, function(){
-            // Al click deve generare 
-            const name = fullNameElement.value;
-            console.log(name);
+      let newTicketPriceUnder = ticketPriceUnder.toFixed(2)
+      let newTicketPriceOver = ticketPriceOver.toFixed(2)
 
-            const km = Number (kmDaPercorrereElement.value);
-            console.log(km);
-            
-            const age = ageElement.value;
-            console.log(age);
 
-            const euro = 0.21
+      if (userAge < 18) {
+            document.getElementById('price').innerHTML = newTicketPriceUnder
+            console.log(`costo biglietto Minori ${newTicketPriceUnder}`);
 
-            const ticketPrice = km * euro
+      } else if (userAge > 65) {
+            document.getElementById('price').innerHTML = newTicketPriceOver
+            console.log(`costo biglietto Anziani ${newTicketPriceOver}`);
 
-            // va applicato uno sconto del 20% per i minorenni
+      } else {
+            document.getElementById('price').innerHTML = ticketPrice
+            console.log(`costo biglietto Adulti ${ticketPrice}`);
 
-            const minimumDiscount = 0.20;
+      }
 
-            const maxTicket = (ticketPrice / 100) * minimumDiscount;
+      // Stampiamo  a schermo i dati ricavati 
+      // selezioniamo l'elemento dalla dom 
 
-            // va applicato uno sconto del 40% per gli over 65.
+      document.getElementById('primo').innerHTML = userName
 
-            const maxDiscount = 0.40;
+      document.getElementById('secondo').innerHTML = sureName
 
-            const minimumTicket = (ticketPrice / 100) * maxDiscount;
+      document.getElementById('terzo').innerHTML = userAge
 
-            if (age < 18) {
-                  console.log(maxTicket); 
-                  // Applica il prezzo con lo sconto minore 
-            } else if (age > 65) {
-                  console.log(minimumTicket); 
-                  // Applica il prezzo con lo sconto massimo 
-            } else {
-                  console.log(ticketPrice);
-                  // Tariffa normale in base ai Km
-            }
-      })
+      document.getElementById('quarto').innerHTML = km
 
-// MILESTONE 1:
 
-// Iniziamo implementando il programma senza alcuna estetica: usando esclusivamente due input e un bottone (non stilizzati), realizziamo le specifiche scritte sopra.
+})
 
-// La risposta finale (o output) sarà anch’essa da scrivere in console.
+buttonDeleteElement.addEventListener('click', function () {
 
-// MILESTONE 2:
+      userNameElement.value = ''
 
-// Solo una volta che il milestone 1 sarà completo e funzionante allora realizzeremo un form in pagina in cui l’utente potrà inserire i dati e visualizzare il calcolo finale con il prezzo.
+      surNameElement.value = ''
 
-// Il riepilogo dei dati e l'output del prezzo finale, andranno quindi stampati in pagina (il prezzo dovrà essere formattato con massimo due decimali, per indicare i centesimi sul prezzo).
+      userAgeElement.value = ''
 
-// Questo richiederà un minimo di ricerca.
+      kmElement.value = ''
+})
+
 
 
 
