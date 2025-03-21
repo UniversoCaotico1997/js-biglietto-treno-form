@@ -23,15 +23,16 @@ buttonSubmitElement.addEventListener('click', function () {
       const sureName = surNameElement.value
       const userAge = userAgeElement.value
       const km = kmElement.value
-      const ticketPrice = km + 0.21.toFixed(2)
+      const ticketPrice = km * 0.21.toFixed(2)
+
+      console.log(ticketPrice);
+
+      const discountOver = 0.40
+      const discoutnUnder = 0.20
 
 
-      const discountOver = 40
-      const discoutnUnder = 20
-
-
-      let ticketPriceUnder = ticketPrice * discoutnUnder / 100
-      let ticketPriceOver = ticketPrice * discountOver / 100
+      let ticketPriceUnder = (ticketPrice - ((ticketPrice * discoutnUnder) / 100))
+      let ticketPriceOver = (ticketPrice - ((ticketPrice * discountOver) / 100))
 
 
       let newTicketPriceUnder = ticketPriceUnder.toFixed(2)
