@@ -75,6 +75,12 @@ buttonDeleteElement.addEventListener('click', function () {
       userAgeElement.value = ''
 
       kmElement.value = ''
+
+      document.getElementById('primo').innerHTML = ''
+      document.getElementById('secondo').innerHTML = ''
+      document.getElementById('terzo').innerHTML = ''
+      document.getElementById('quarto').innerHTML = ''
+      document.getElementById('price').innerHTML = ''
 })
 
 
